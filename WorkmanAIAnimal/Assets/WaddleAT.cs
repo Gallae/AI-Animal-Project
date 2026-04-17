@@ -23,9 +23,9 @@ namespace NodeCanvas.Tasks.Actions {
 		//Return null if init was successfull. Return an error string otherwise
 		protected override string OnInit() {
 			hydration.value = Random.Range(70f, 100f);
-			fear.value = Random.Range(0f, 30f);
+            fear.value = Random.Range(0f, 30f);
 			cleanliness.value = Random.Range(70f, 100f);
-			hunger.value = Random.Range(0f, 20f);
+			hunger.value = 63; //Random.Range(0f, 20f);
             inWater.value = false;
 			isDiving.value = false;
             return null;
