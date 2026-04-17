@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f945e777233a59f4aba40aeca29093a6, type: 3}
+  m_Name: idleFSM
+  m_EditorClassIdentifier: NodeCanvas::NodeCanvas.StateMachines.FSM
+  _serializedGraph: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"turtleParent":{"_name":"turtleParent","_targetVariableID":"f26bba83-856d-4b10-bc6c-34fc880eceeb"},"turtleBody":{"_name":"turtleBody","_targetVariableID":"b780758c-31ce-41bd-b6d3-06d9be4bc1b7"},"hydration":{"_name":"hydration","_targetVariableID":"58f4bc6c-4415-4870-9a46-852420b029c4"},"fear":{"_name":"fear","_targetVariableID":"07979aab-0434-40e3-ab2b-0aebd061e745"},"cleanliness":{"_name":"cleanliness","_targetVariableID":"5aaf5cfd-c51a-4043-b45d-794bcea16083"},"hunger":{},"inWater":{"_name":"inWater","_targetVariableID":"c3f3879a-f297-4779-b10a-5dbb4011eb4e"},"isDiving":{"_name":"diving","_targetVariableID":"eecc0b4d-05b3-4e33-9499-db0f283f3058"},"$type":"NodeCanvas.Tasks.Actions.WaddleAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Idle","_position":{"x":466.4,"y":244.8},"_comment":"","$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"$type":"NodeCanvas.Tasks.Actions.PauseAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Pause","_position":{"x":615.9999,"y":403.1999},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _objectReferences: []
+  _graphSource:
+    _version: 3.33
+    _category: 
+    _comments: 
+    _translation: {x: -28, y: 6}
+    _zoomFactor: 1
+  _haltSerialization: 0
+  _externalSerializationFile: {fileID: 0}
