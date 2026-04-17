@@ -4,7 +4,7 @@ using ParadoxNotion.Design;
 
 namespace NodeCanvas.Tasks.Conditions {
 
-	public class hungryCT : ConditionTask {
+	public class fullCT : ConditionTask {
 
 		public BBParameter<float> hunger;
 
@@ -27,7 +27,7 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Called once per frame while the condition is active.
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
-			if(hunger.value >= 65)
+			if(hunger.value <= 15)
 			{
 				return true;
             }

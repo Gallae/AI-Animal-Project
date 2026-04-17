@@ -25,7 +25,8 @@ namespace NodeCanvas.Tasks.Actions {
 			hydration.value = Random.Range(70f, 100f);
 			fear.value = Random.Range(0f, 30f);
 			cleanliness.value = Random.Range(70f, 100f);
-			inWater.value = false;
+			hunger.value = Random.Range(0f, 20f);
+            inWater.value = false;
 			isDiving.value = false;
             return null;
 		}
@@ -42,6 +43,7 @@ namespace NodeCanvas.Tasks.Actions {
 			hydration.value -= Time.deltaTime * 0.5f;
 			fear.value += Time.deltaTime * 0.2f;
 			cleanliness.value -= Time.deltaTime * 0.3f;
+			hunger.value += Time.deltaTime * 0.35f;
             waddleTimer -= Time.deltaTime;
 			if (waddleTimer % waddleDelay <= 0.2f)
 			{
