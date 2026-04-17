@@ -1,5 +1,6 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
+using System;
 using UnityEngine;
 
 
@@ -17,7 +18,6 @@ namespace NodeCanvas.Tasks.Actions {
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit() {
-            turtleParent.value.transform.LookAt(food.value.transform);
             return null;
 		}
 
@@ -25,19 +25,17 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-			EndAction(true);
+            Debug.DrawLine(turtleParent.value.transform.position, food.value.transform.position, Color.red, 5f);
+            waddleTimer = UnityEngine.Random.Range(6f, 10f);
 		}
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-            if (waddleTimer % waddleDelay <= 0.2f)
-            {
+            //waddleTimer -= Time.deltaTime;
+            //if (waddleTimer % waddleDelay <= 0.2f)
+            //{
                 takeStep();
-            }
-            if (waddleTimer <= 0)
-            {
-                EndAction(true);
-            }
+            //}
         }
 
 		//Called when the task is disabled.
@@ -51,8 +49,9 @@ namespace NodeCanvas.Tasks.Actions {
 		}
         void takeStep()
         {
+            turtleParent.value.transform.rotation = Quaternion.LookRotation(food.value.transform.position - turtleParent.value.transform.position);
             Debug.Log("Taking step");
-            turtleParent.value.transform.Translate(0.1f, 0, 0);
+            turtleParent.value.transform.Translate(turtleParent.value.transform.forward * 0.1f);
             if (!steppedLeft)
             {
                 turtleBody.value.transform.Rotate(0, -10, 0);
